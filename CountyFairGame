@@ -1,0 +1,132 @@
+nice = 0
+mean = 0
+
+def main():
+    start()
+
+def start():
+    print "RIBBON WARS"
+    name  = raw_input("What is your name? : ")
+    print "Hello "+name+"!"
+    print "You've just become a judge at the county fair." 
+    print "Decide who is awarded a ribbon and who is not."
+    print "Your fate will be determined by your choices."
+
+    choice = raw_input ("Would you like to play? y/n ")
+
+    if choice == "y":
+        print "Let's begin!"
+        print "It is fairly simple: "
+        print "Use 'r' to give a ribbon, and 'n' to reject their efforts."
+        begin()
+
+    if choice == "n":
+        print "It wouldn't hurt to humor me!"
+        print "Bye!"
+
+def begin():
+    global nice
+    global mean
+    
+
+    pick = raw_input("A man is showing you a huge talking pig. Does he get a ribbon? r/n ")
+
+    if pick == "r":
+        print "How nice! Wilbur is very grateful."
+        nice = nice+1
+        print "Score: " +str(nice) + " nice."
+        next
+
+    if pick == "n":
+        print "That poor man is absolutely devestated. Nice."
+        mean = mean+1
+        print "Score: " +str(mean) + " mean."
+        next
+
+    pick = raw_input("The Ghost Busters come by and show you some goo. Do they get a ribbon? r/n ")
+
+    if pick == "r":
+        print "The four men begin to make strange, high pitched noises and run away."
+        nice = nice+1
+        print "Score: " +str(nice) + " nice."
+        next
+
+    if pick == "n":
+        print "Great, now they're threatening to let a ghost loose on the town."
+        mean = mean+1
+        print "Score: " +str(mean) + " mean."
+        next
+
+      
+    pick = raw_input("Both Jesus and Moses arise from the dead holding hands. Do they get a ribbon? r/n ")
+
+    if pick == "r":
+        print "Good choice. They've invited you out on the country town."
+        nice = nice+1
+        print "Score: " +str(nice) + " nice."
+        next
+
+    if pick == "n":
+        print "Real nice dude. They've begun whispering and pointing at you..."
+        mean = mean+1
+        print "Score: " +str(mean) + " mean."
+        next
+
+
+    pick = raw_input("Some kid is jumping rope and speaking horsely in ancient aramaic. Ribbon? r/n ")
+
+    if pick == "r":
+        print "Aw! She's pleased. She's run off to show her parents."
+        nice = nice+1
+        print "Score: " +str(nice) + " nice."
+        next
+
+    if pick == "n":
+        print "Yea, just like...walk away slowly."
+        mean = mean+1
+        print "Score: " +str(mean) + " mean."
+        
+        
+
+    if nice > 2:
+        print "Everyone is a winner!"
+        print "You have many fans at this fair."
+        choice = raw_input("Play again? y/n ")
+
+        if choice == "y":
+            print "Alright, here we go..."
+            nice = 0
+            begin()
+
+        if choice == "n":
+            print "I don't blame you..."
+            exit()
+            
+        if mean > 2:
+            print "Wow. Keeping those ribbons to yourself huh?"
+            print "GAME OVER!"
+            choice = raw_input("Play again? y/n ")
+
+        if choice == "y":
+            print "Ok, now you know what you must do."
+            mean = 0
+            begin()
+
+        if choice == "n":
+            print "I understand."
+            print "See you around! Maybe."
+            exit()
+
+        elif choice != "y"+"n":
+            print "Say something sweetheart!"
+
+            if choice == "y":
+                begin()
+            if choice == "n":
+                print "bummer."
+                exit()
+            if choice != "y"+"n":
+                choice = raw_input("PLEASEEE! y/n ") 
+        
+
+start()
