@@ -1,0 +1,50 @@
+import datetime
+from pytz import timezone
+
+
+t = datetime.time(9,0)
+opening_time = t
+t2 = datetime.time(21,0)
+closing_time = t2
+
+def Portland():
+    pacific = timezone('US/Pacific')
+    p_time = datetime.now(pacific)
+    Portland = p_time.strftime('%H:%M')
+
+def Open1():
+    if Portland >= opening_time:
+        print('The office is open')
+    elif Portland >= closing_time:
+        print('The office is now closed')    
+
+def New_York():
+    ny = timezone('US/Eastern')
+    ny_time = datetime.now(ny)
+    New_York = ny_time.strftime('%H:%M')
+
+def Open2():
+    if New_York >= opening_time:
+        print('The New York office is open')
+    elif New_York >= closing_time:
+        print('The New York office is now closed')
+        
+def London():
+    england = timezone('Europe/London')
+    l_time = datetime.now(england)
+    London = l_time.strftime('%H:%M')
+
+def Open3():
+    if London >= opening_time:
+        print('The London office is open')
+    elif London >= closing_time:
+        print('The London office is now closed')
+
+def main():
+    Portland = Open1()
+    New_York = Open2()
+    London = Open3()
+
+
+
+if __name__ == '__main__': main()
